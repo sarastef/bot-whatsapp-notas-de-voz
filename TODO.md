@@ -1,0 +1,2 @@
+- [ ] Crear un flujo del bot que conecte con AI (ChatGPT)
+- [ ] Crear un flujo del bot que conecte con AI (Gemini)
