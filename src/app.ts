@@ -35,6 +35,11 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME).addAction(
 const voiceFlow = addKeyword<Provider, Database>(EVENTS.VOICE_NOTE).addAction(
   async (ctx, { flowDynamic, provider }) => {
     try {
+      const dir = "./storage";
+
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+      }
       const storagePath = join(process.cwd(), "storage");
 
       const ogaFilePath = await provider.saveFile(ctx, {
